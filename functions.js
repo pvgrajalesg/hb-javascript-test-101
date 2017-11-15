@@ -13,19 +13,13 @@ export function filterNegativeNumbers(arrayNumbers) {
 
 }
 
-export function filterNegativeNumbers(value) {
-	return value >= 0;
-
+export function functionalfilterNegativeNumbers(arrayNumbers) {
+    return arrayNumbers.filter(number => number >= 0)
 }
 
-var valoresPositivos = [-4, -6, -5, 0, 34, 54, -7].filter(filterNegativeNumbers);
-console.log(valoresPositivos);
-
-var strings = [-4, -6, -5, 0, 34, 54, -7].map(function (number) {
-	return number.toString();
-});
-
-console.log(strings);
+export function functionalMapNumbersIntoStrings(arrayNumbers){
+    return arrayNumbers.map(string => string.toString());
+}
 
 export function generateRandomColor() {
 	var r = Math.floor((Math.random() * 255) + 0);
@@ -35,8 +29,6 @@ export function generateRandomColor() {
 	var color = '{r: ' + r + ' g: ' + g + ' b: ' + b + '}';
 
 	return color;
-
-
 }
 
 export function isPalindrome(string) {
@@ -86,12 +78,6 @@ export function printOutPersonAge(student) {
 	console.log(student.age);
 }
 
-const student = new Person('John', 25);
-student.printName(); // "John"
-printOutPersonAge(student); // 25
-
 export function printType(variable) {
 	console.log(typeof (variable));
 }
-
-printType(1);
