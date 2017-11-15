@@ -2,7 +2,7 @@
 export function filterNegativeNumbers(arrayNumbers) {
 	var positiveNumbers = [];
 	var j = 0;
-	for (i = 0; i < arrayNumbers.length; i++) {
+	for (var i = 0; i < arrayNumbers.length; i++) {
 		if (arrayNumbers[i] >= 0) {
 			positiveNumbers[j] = arrayNumbers[i];
 			j++;
@@ -35,7 +35,7 @@ export function isPalindrome(string) {
 
 	var newString = "";
 	var lowerCase = string.toLowerCase();
-	for (i in lowerCase) {
+	for (var i in lowerCase) {
 		if (string[i] != " ") {
 			newString += lowerCase[i];
 		}
@@ -55,7 +55,7 @@ export function isPalindrome(string) {
 
 export function mapNumbersIntoStrings(arrayNumbers) {
 	var arrayString = [];
-	for (i = 0; i < arrayNumbers.length; i++) {
+	for (var i = 0; i < arrayNumbers.length; i++) {
 		arrayString[i] = arrayNumbers[i].toString();
 	}
 
