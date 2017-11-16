@@ -5,7 +5,9 @@ import{
     mapNumbersIntoStrings,
     generateRandomColor,
     isPalindrome,   
-    printType
+    printType,
+    Person,
+    printOutPersonAge
 } from './functions.js';
 
 describe(filterNegativeNumbers, () =>{
@@ -43,15 +45,50 @@ describe(isPalindrome, () =>{
 });
 
 describe(printType, () =>{
+    let spy;
     beforeEach(() => {
-        global.console = {
-            log: jest.fn()
-        }
+        spy = jest.spyOn(console, 'log');
     });
 
     it('PrintType', () => {
         printType('datos');
-        expect(global.console.log).toHaveBeenCalledWith('string');
+        expect(spy).toHaveBeenCalledWith('string');
+        printType(2);
+        expect(spy).toHaveBeenCalledWith('number');
+    });
+});
+
+describe(Person, () => {
+    let student;
+    let spy;
+
+    beforeAll(() => {
+        student = new Person('John', 25);
+        spy = jest.spyOn(console, 'log');
+    });
+
+    it('Should show name person', () => {
+        student.printName();
+        expect(spy).toHaveBeenCalledWith('John');
+    });
+
+    it('Should show age person', () => {
+        printOutPersonAge(student);
+        expect(spy).toHaveBeenCalledWith(25);
+    }
+
+    )
+});
+
+describe(generateRandomColor, () => {
+    it('Should return object random RGB color object', () => {
+        expect(generateRandomColor()).toMatchObject(
+            {
+                r: expect.any(Number),
+                g: expect.any(Number),
+                b: expect.any(Number)
+            }
+        );
     });
 });
 

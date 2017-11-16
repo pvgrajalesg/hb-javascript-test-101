@@ -22,30 +22,22 @@ export function functionalMapNumbersIntoStrings(arrayNumbers){
 }
 
 export function generateRandomColor() {
-	var r = Math.floor((Math.random() * 255) + 0);
-	var g = Math.floor((Math.random() * 255) + 0);
-	var b = Math.floor((Math.random() * 255) + 0);
-
-	var color = '{r: ' + r + ' g: ' + g + ' b: ' + b + '}';
-
-	return color;
+	return {
+		r : Math.floor((Math.random() * 255) + 0),
+		g : Math.floor((Math.random() * 255) + 0),
+		b : Math.floor((Math.random() * 255) + 0)
+	}
 }
 
 export function isPalindrome(string) {
 
-	var newString = "";
-	var lowerCase = string.toLowerCase();
-	for (var i in lowerCase) {
-		if (string[i] != " ") {
-			newString += lowerCase[i];
-		}
-	}
-
+	var newString = string.replace(/\s/g, "");
+	var lowerCase = newString.toLowerCase();
 	var answer = true;
-	var letters = newString.split("");
-	var backwardsLetters = newString.split("").reverse();
+	var letters = lowerCase.split("");
+	var backwardsLetters = lowerCase.split("").reverse();
 
-	for (i = 0; i < Math.floor(letters.length / 2); i++) {
+	for (var i = 0; i < Math.floor(letters.length / 2); i++) {
 		if (letters[i] != backwardsLetters[i]) {
 			answer = false;
 		}
