@@ -15,6 +15,7 @@ describe(filterNegativeNumbers, () =>{
         const arrayNumber = [-4, -6, -5, 0, 34, 54, -7];
         expect(filterNegativeNumbers(arrayNumber)).toEqual([0, 34, 54]);
         expect(functionalfilterNegativeNumbers(arrayNumber)).toEqual([0, 34, 54]);
+        expect(functionalfilterNegativeNumbers([-4, -6, -5, -34, -54, -7])).toEqual([]);
         expect(filterNegativeNumbers([])).toEqual([]);
         expect(functionalfilterNegativeNumbers([])).toEqual([]);
     });
